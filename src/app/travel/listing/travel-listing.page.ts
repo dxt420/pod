@@ -27,6 +27,8 @@ export class TravelListingPage implements OnInit {
       listingDataStore.state.subscribe(
         (state) => {
           this.listing = state;
+
+          console.log(state);
         },
         (error) => {}
       );

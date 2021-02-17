@@ -1,7 +1,13 @@
 {
-  "name": "Ionic4FullApp",
+  "name": "Pod",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "proxies": [{
+      "path": "/",
+      "proxyUrl": "https://pod.pythonanywhere.com/"
+  }]
+  
 }

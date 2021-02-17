@@ -1,0 +1,105 @@
+
+
+<ion-content class="user-profile-content">
+
+    <div class="user-friends-section">
+        <ion-row  class="heading-row">
+          <!-- <h3 text-center   class="details-section-titleX">  'Made by Pod' | translate  </h3> -->
+          <h3 text-center   class="details-section-title">  Recently Played   </h3>
+          <a class="heading-call-to-action">  SEE_ALL  </a>
+        </ion-row>
+        <ion-row class="friends-row">
+    
+          <ion-col [routerLink]="['/app/categories/fashion', p.playlist_id]" class="friend-item" size="3" *ngFor="let p of playlists.results">
+            <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+              <app-image-shell class="friend-picture" [src]="p.cover"></app-image-shell>
+            </app-aspect-ratio>
+            <span class="friend-name">
+              <app-text-shell  [data]="p.title"></app-text-shell>
+            </span>
+          </ion-col>
+        </ion-row>
+      </div>
+
+
+      <div class="user-friends-section">
+        <ion-row  class="heading-row">
+          <!-- <h3 text-center   class="details-section-titleX">  'Made by Pod' | translate  </h3> -->
+          <h3 text-center   class="details-section-title">  Made by Pod  </h3>
+          <a class="heading-call-to-action">  SEE_ALL  </a>
+        </ion-row>
+        <ion-row class="friends-row">
+    
+          <ion-col [routerLink]="['/app/categories/fashion']" class="friend-item" size="3" *ngFor="let p of playlists.results">
+            <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+              <app-image-shell class="friend-picture" [src]="p.cover"></app-image-shell>
+            </app-aspect-ratio>
+            <span class="friend-name">
+              <app-text-shell  [data]="p.title"></app-text-shell>
+            </span>
+          </ion-col>
+        </ion-row>
+      </div>
+
+
+
+
+
+  <!-- This is bettter off in an a more detailed environment so as to show related artists like under playlists, show "Artists featured in this playlist" -->
+  <!-- This is bettter off in an a more detailed environment so as to show related artists like under playlists, show "Artists featured in this playlist" -->
+ 
+  <div class="user-friends-section">
+    <ion-row class="heading-row">
+      <h3 class="details-section-title">  Popular   </h3>
+      <a class="heading-call-to-action">  SEE_ALL  </a>
+    </ion-row>
+    <ion-row class="friends-row">
+      <ion-col [routerLink]="['/app/artist']" class="friend-item" size="2" *ngFor="let p of playlists.results">
+        <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+          <app-image-shell class="friend-picture" style="border-radius:50%" [src]="p.cover"></app-image-shell>
+        </app-aspect-ratio>
+        <span class="friend-name">
+          <app-text-shell [data]="p.title"></app-text-shell>
+        </span>
+      </ion-col>
+    </ion-row>
+  </div> 
+
+
+ 
+   <div class="user-friends-section">
+      <ion-row class="heading-row">
+        <h3 text-center class="details-section-title">  Podcasts  </h3>
+        <a class="heading-call-to-action">  SEE_ALL  </a>
+      </ion-row>
+      <ion-row class="friends-row">
+        <ion-col class="friend-item" size="2" *ngFor="let p of playlists.results">
+          <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+            <app-image-shell class="friend-picture" style="border-radius:50%" [src]="p.cover"></app-image-shell>
+          </app-aspect-ratio>
+          <span class="friend-name">
+            <app-text-shell [data]="p.title"></app-text-shell>
+          </span>
+        </ion-col>
+      </ion-row>
+    </div> 
+
+
+  
+
+ 
+   <div class="user-photos-section">
+    <ion-row class="heading-row">
+      <h3 class="details-section-title">  Shows and Concerts   </h3>
+      <a class="heading-call-to-action">  SEE_ALL   </a>
+    </ion-row>
+    <ion-row class="pictures-row">
+      <ion-col class="picture-item" size="2" *ngFor="let p of playlists.results">
+        <app-image-shell [mode]="'cover'" [src]="p.cover" class="user-photo-image">
+          <app-aspect-ratio [ratio]="{w:1, h:1}">
+          </app-aspect-ratio>
+        </app-image-shell>
+      </ion-col>
+    </ion-row>
+  </div> 
+</ion-content>

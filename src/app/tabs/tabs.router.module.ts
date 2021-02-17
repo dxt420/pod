@@ -14,16 +14,13 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../categories/categories.module').then(m => m.CategoriesPageModule)
+            // loadChildren: () => import('../categories/categories.module').then(m => m.CategoriesPageModule)
           },
-          {
-            path: 'fashion',
-            loadChildren: () => import('../fashion/listing/fashion-listing.module').then(m => m.FashionListingPageModule)
-          },
-          {
-            path: 'fashion/:productId',
-            loadChildren: () => import('../fashion/details/fashion-details.module').then(m => m.FashionDetailsPageModule)
-          },
+          
+          // {
+          //   path: 'fashion/:productId',
+          //   loadChildren: () => import('../fashion/details/fashion-details.module').then(m => m.FashionDetailsPageModule)
+          // },
           {
             path: 'food',
             loadChildren: () => import('../food/listing/food-listing.module').then(m => m.FoodListingPageModule)
@@ -59,31 +56,46 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'user',
+        path: 'pages',
         children: [
           {
-            path: '',
-            // loadChildren: () => import('../user/profile/user-profile.module').then(m => m.UserProfilePageModule)
-            loadChildren: () => import('../user/profile/playlist.module').then(m => m.PlaylistPageModule)
+            path: 'playlist',
+            loadChildren: () => import('../playlist/listing/playlist-listing.module').then(m => m.PlaylistListingPageModule)
           },
           {
-            path: 'artists',
-            loadChildren: () => import('../artists/notifications.module').then(m => m.NotificationsPageModule)
+            path: 'playlist/:productId',
+            loadChildren: () => import('../playlist/details/playlist-detail.module').then(m => m.PlaylistDetailsPageModule)
           },
-          {
-            path: 'album',
-            loadChildren: () => import('../album/profile/user-profile.module').then(m => m.UserProfilePageModule)
-          }
+
 
         ]
       },
+      // {
+      //   path: 'user',
+      //   children: [
+      //     {
+      //       path: '',
+      //       // loadChildren: () => import('../user/profile/user-profile.module').then(m => m.UserProfilePageModule)
+      //       loadChildren: () => import('../profile/playlist.module').then(m => m.PlaylistPageModule)
+      //     },
+      //     {
+      //       path: 'artists',
+      //       loadChildren: () => import('../artists/notifications.module').then(m => m.NotificationsPageModule)
+      //     },
+      //     {
+      //       path: 'album',
+      //       loadChildren: () => import('../album/profile/user-profile.module').then(m => m.UserProfilePageModule)
+      //     }
+
+      //   ]
+      // },
       {
         path: 'search',
         children: [
          
           {
             path: '',
-            loadChildren: () => import('../user/friends/user-friends.module').then(m => m.UserFriendsPageModule)
+            loadChildren: () => import('../search/user-friends.module').then(m => m.UserFriendsPageModule)
           }
         ]
       },

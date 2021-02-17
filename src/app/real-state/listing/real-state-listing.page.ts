@@ -27,6 +27,8 @@ export class RealStateListingPage implements OnInit {
       listingDataStore.state.subscribe(
         (state) => {
           this.listing = state;
+
+          console.log(this.listing);
         },
         (error) => {}
       );

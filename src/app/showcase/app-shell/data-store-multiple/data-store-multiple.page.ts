@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ShowcaseService } from '../../showcase.service';
 import { DataStore } from '../../../shell/data-store';
-import { FashionListingModel } from '../../../fashion/listing/fashion-listing.model';
+
 import { TravelListingModel } from '../../../travel/listing/travel-listing.model';
+import { PlaylistListingModel } from '../../../playlist/listing/playlist-listing.model';
 
 @Component({
   selector: 'app-data-store-multiple',
@@ -12,9 +13,9 @@ import { TravelListingModel } from '../../../travel/listing/travel-listing.model
 export class DataStoreMultiplePage implements OnInit {
 
   dataStoreA: DataStore<TravelListingModel>;
-  dataStoreB: DataStore<FashionListingModel>;
+  dataStoreB: DataStore<PlaylistListingModel>;
   dataA: TravelListingModel;
-  dataB: FashionListingModel;
+  dataB: PlaylistListingModel;
 
   constructor(private showcaseService: ShowcaseService) { }
 
@@ -30,7 +31,7 @@ export class DataStoreMultiplePage implements OnInit {
       this.dataA = data;
     });
 
-    const shellModelB: FashionListingModel = new FashionListingModel();
+    const shellModelB: PlaylistListingModel = new PlaylistListingModel();
 
     this.dataStoreB = new DataStore(shellModelB);
     this.dataStoreB.load(dataSourceB);

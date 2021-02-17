@@ -15,6 +15,7 @@ export class TravelService {
   constructor(private http: HttpClient) { }
 
   public getListingDataSource(): Observable<TravelListingModel> {
+    console.log(this.http.get<TravelListingModel>('./assets/sample-data/travel/listing.json'));
     return this.http.get<TravelListingModel>('./assets/sample-data/travel/listing.json');
   }
 

@@ -7,7 +7,8 @@ import { delay, finalize, tap, map, filter, concatMap } from 'rxjs/operators';
 import { ShowcaseShellModel, ShowcasePostModel, ShowcaseCommentModel, ShowcaseCombinedTaskUserModel, ShowcaseUser2Model, ShowcaseTaskModel, ShowcaseShellUserModel, ShowcaseCompanyModel } from './showcase-shell.model';
 import { DataStore, ShellModel } from '../shell/data-store';
 import { TravelListingModel } from '../travel/listing/travel-listing.model';
-import { FashionListingModel } from '../fashion/listing/fashion-listing.model';
+import { PlaylistListingModel } from '../playlist/listing/playlist-listing.model';
+
 
 @Injectable()
 export class ShowcaseService {
@@ -62,8 +63,8 @@ export class ShowcaseService {
     return this.http.get<TravelListingModel>('./assets/sample-data/travel/listing.json');
   }
 
-  public getMultipleDataSourceB(): Observable<FashionListingModel> {
-      return this.http.get<FashionListingModel>('./assets/sample-data/fashion/listing.json');
+  public getMultipleDataSourceB(): Observable<PlaylistListingModel> {
+      return this.http.get<PlaylistListingModel>('./assets/sample-data/fashion/listing.json');
   }
 
   public getDependantDataSourcePost(): Observable<ShowcasePostModel> {
